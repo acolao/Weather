@@ -13,7 +13,7 @@ function working(event) {
 }
 
 function getApi(city) {
-    const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=61b0d86da3e886c7184d7e739f2781d9';
+    const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&appid=61b0d86da3e886c7184d7e739f2781d9';
 
     fetch(weatherApiUrl)
         .then(function (response) {
