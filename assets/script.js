@@ -22,13 +22,18 @@ function getApi(city) {
             console.log(data)
             // create
             let h1El = document.createElement('h1')
-
+            let currentTemp = document.createElement('current-temp')
+            //let sunset = document.createElement('sunset')
             // add
             h1El.textContent = data.name
+            currentTemp.textContent = data.main.temp + '°'
+            //sunrise.textContent = data.feels_like
 
 
             // append
             weatherContainer.append(h1El)
+            weatherContainer.append(currentTemp)
+            //weatherContainer.append(sunrise)
         });
 };
 function getApiTwo(city) {
@@ -39,6 +44,12 @@ function getApiTwo(city) {
             return response.json();
         }).then(function (data) {
             console.log(data)
+   //currentWeather
+   //const currentTemp = document.getElementById('current-temp')
+   //const sunrise = document.getElementById('sunrise')
+   //const sunset = document.getElementById('sunset')
+   //need to add titles
+   //currentTemp.textContent = data.city.temp + '°'
    //cardONE
    const cardOneMaxTemp = document.getElementById('card-max-temp-one');
    const cardOneMinTemp = document.getElementById('card-min-temp-one');
@@ -46,7 +57,7 @@ function getApiTwo(city) {
    //need to add titles
    cardOneMinTemp.textContent = data.list[0].main.temp_min + '°'
    cardOneMaxTemp.textContent = data.list[3].main.temp_max + '°'
-   cardOneDate.textContent = data.list[0].dt_txt//format time
+   cardOneDate.textContent = data.list[0].dt_txt
 
    //cardTwo
    const cardTwoMaxTemp = document.getElementById('card-max-temp-two');
