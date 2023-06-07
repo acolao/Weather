@@ -1,0 +1,39 @@
+header {
+    height: 100px;
+    width: 100%;
+    border: 15px solid green;
+    padding: 10px 10px;
+    font-size: 50px;
+    color:blueviolet;
+    text-align: center;
+    justify-content: space-around;
+    column-span: all;
+}
+
+.forecast {
+box-sizing: border-box; 
+  /* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+.day {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.day:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .day{
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+}
