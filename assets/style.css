@@ -10,6 +10,14 @@ header {
     column-span: all;
 }
 
+h4 {
+  font-size: 10px;
+}
+.row{
+  margin: 20px;
+  padding: 10px;
+  border: black
+}
 .forecast {
 box-sizing: border-box; 
   /* Float four columns side by side */

@@ -21,9 +21,10 @@ function getApi(city) {
         }).then(function (data) {
             console.log(data)
             // create
-            let h1El = document.createElement('h1')
-            let currentTemp = document.createElement('current-temp')
-            //let sunset = document.createElement('sunset')
+            let h1El = document.createElement('h1');
+            let currentTemp = document.createElement('current-temp');
+            let currentWind = document.createElement('wind-speed');
+            let currentHumid = document.createElement('humid');
             // add
             h1El.textContent = data.name
             currentTemp.textContent = data.main.temp + '°'
@@ -51,46 +52,56 @@ function getApiTwo(city) {
    //need to add titles
    //currentTemp.textContent = data.city.temp + '°'
    //cardONE
-   const cardOneMaxTemp = document.getElementById('card-max-temp-one');
-   const cardOneMinTemp = document.getElementById('card-min-temp-one');
+   const cardOneTemp = document.getElementById('card-temp-one');
+   const cardOneWind = document.getElementById('card-wind-one');
    const cardOneDate = document.getElementById('card-date-one');
+   const cardOneHumid = document.getElementById('card-humidity-one');
    //need to add titles
-   cardOneMinTemp.textContent = data.list[0].main.temp_min + '°'
-   cardOneMaxTemp.textContent = data.list[3].main.temp_max + '°'
-   cardOneDate.textContent = data.list[0].dt_txt
+   cardOneTemp.textContent = data.list[3].main.temp + '°'
+   cardOneWind.textContent = data.list[3].wind.speed
+   cardOneDate.textContent = data.list[3].dt_txt
+   cardOneHumid.textContent = data.list[3].main.humidity
 
    //cardTwo
-   const cardTwoMaxTemp = document.getElementById('card-max-temp-two');
-   const cardTwoMinTemp = document.getElementById('card-min-temp-two');
+   const cardTwoTemp = document.getElementById('card-temp-two');
+   const cardTwoWind = document.getElementById('card-wind-two');
    const cardTwoDate = document.getElementById('card-date-two');
-   //need to add titles
-   cardTwoMinTemp.textContent = data.list[6].main.temp_min + '°'
-   cardTwoMaxTemp.textContent = data.list[11].main.temp_max + '°'
+   const cardTwoHumid = document.getElementById('card-humidity-two')
+   
+   cardTwoTemp.textContent = data.list[6].main.temp + '°'
+   cardTwoWind.textContent = data.list[6].wind.speed
    cardTwoDate.textContent = data.list[6].dt_txt//format time
+   cardTwoHumid.textContent = data.list[6].main.humidity
    //cardThree
-   const cardThreeMaxTemp = document.getElementById('card-max-temp-three');
-   const cardThreeMinTemp = document.getElementById('card-min-temp-three');
+   const cardThreeTemp = document.getElementById('card-temp-three');
+   const cardThreeWind = document.getElementById('card-wind-three');
    const cardThreeDate = document.getElementById('card-date-three');
+   const cardThreeHumid = document.getElementById('card-humidity-three');
    //need to add titles
-   cardThreeMinTemp.textContent = data.list[14].main.temp_min + '°'
-   cardThreeMaxTemp.textContent = data.list[19].main.temp_max + '°'
+   cardThreeTemp.textContent = data.list[14].main.temp + '°'
+   cardThreeWind.textContent = data.list[19].wind.speed
    cardThreeDate.textContent = data.list[14].dt_txt//format time
+   cardThreeHumid.textContent = data.list[14].main.humidity
    //cardFour
-   const cardFourMaxTemp = document.getElementById('card-max-temp-four');
-   const cardFourMinTemp = document.getElementById('card-min-temp-four');
+   const cardFourTemp = document.getElementById('card-temp-four');
+   const cardFourWind = document.getElementById('card-wind-four');
    const cardFourDate = document.getElementById('card-date-four');
+   const cardFourHumid = document.getElementById('card-humidity-four');
    //need to add titles
-   cardFourMinTemp.textContent = data.list[22].main.temp_min + '°'
-   cardFourMaxTemp.textContent = data.list[27].main.temp_max + '°'
+   cardFourTemp.textContent = data.list[22].main.temp + '°'
+   cardFourWind.textContent = data.list[27].wind.speed
    cardFourDate.textContent = data.list[22].dt_txt//format time
+   cardFourHumid.textContent = data.list[27].main.humidity
    //cardFive
-   const cardFiveMaxTemp = document.getElementById('card-max-temp-five');
-   const cardFiveMinTemp = document.getElementById('card-min-temp-five');
+   const cardFiveTemp = document.getElementById('card-temp-five');
+   const cardFiveWind = document.getElementById('card-wind-five');
    const cardFiveDate = document.getElementById('card-date-five');
+   const cardFiveHumid = document.getElementById('card-humidity-five');
    //need to add titles
-   cardFiveMinTemp.textContent = data.list[30].main.temp_min + '°'
-   cardFiveMaxTemp.textContent = data.list[35].main.temp_max + '°'
+   cardFiveTemp.textContent = data.list[30].main.temp + '°'
+   cardFiveWind.textContent = data.list[35].wind.speed
    cardFiveDate.textContent = data.list[30].dt_txt//format time
+   cardFiveHumid.textContent = data.list[35].main.humidity
  
         });
 };
